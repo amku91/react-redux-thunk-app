@@ -3,12 +3,15 @@ import logo from './logo.svg';
 import './App.css';
 /**redux libs */
 import { Provider } from 'react-redux';
-import rootStore from './store';
+import configureStore from './store';
+
+import DisplayGithubData from './containers/displayGithubData';
 
 class App extends Component {
   render() {
     return (
-      <Provider store={rootStore}>
+      <Provider store={configureStore}>
+        <DisplayGithubData />
       </Provider>
     );
   }

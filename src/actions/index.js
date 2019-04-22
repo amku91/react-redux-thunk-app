@@ -5,7 +5,7 @@ const apiUrl = 'https://api.github.com/users/amku91';
 
 export const fetchData = data => ({
     type: Types.FETCH_GITHUB_DATA,
-    data
+    data: data
 });
 
 /**get data from github thorugh axios promise */

@@ -1,10 +1,13 @@
 import { createStore, applyMiddleware } from 'redux';
 import reducers from '../reducers';
-import getGithubData from '../actions';
+import { fetchGithubData } from '../actions';
+import thunk from 'redux-thunk';
 
-const createStore = createStore(reducers, applyMiddleware(thunk));
+const initialState = {};
+
+const configureStore = createStore(reducers, initialState, applyMiddleware(thunk));
 
 /**dispatch the get github data action also */
-createStore.dispatch(getGithubData());
+configureStore.dispatch(fetchGithubData());
 
-export default createStore;
+export default configureStore;
